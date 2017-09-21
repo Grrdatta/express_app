@@ -1,0 +1,45 @@
+<!--instead of creating a separate html page for each movie induvidual instead we create a templeting page for movie songle page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Because the movie varible reprasent the array of movie objects we use for loop to loop through the array os movies and get eachmovie poster and out put it.we have a class hear as we call image responsive this is a bootstrap class -->
+  <% include partials/head.ejs%>  
+  </head>
+  <body>
+<!--we have to create a div wit an id of hero image this is going to get a lot of those styles and custom  and we create a h1 and passing hero title it is going to become a little bit more useful for each movie has diff title-->
+<% include partials/header.ejs %>
+<!--to get the backgroung img for each and every template-->
+<div id="hero-image-single" style="background-image: url('/images/<%= movie.hero_image %>');">
+<h1 id="hero-title"><%= title %></h1>
+</div>
+<!--in each templete we want the poster which was deplaying on the side so we use this -->
+<div class="content-padding clearfix">
+
+		<div class="poster-wrapper">
+  		<img src="/images/<%= movie.poster %>" class="img-responsive">
+  	</div>
+  	<!--to display the discripton -->
+  	<div class="description-wrapper">
+  		
+  		<div class="description">
+  			<h2 class="movie-header">Description</h2>
+  			<p><%= movie.description %></p>
+  		</div>
+<!-- this is for main charaters present in the serial -->
+<div class="main-characters">
+  			<h2 class="movie-header">Main Characters</h2>
+  			<ul>
+  			<% for (var i = 0; i < main_characters.length; i++) { %>
+  				<li><%= main_characters[i] %></li>
+  			<% } %>
+  			</ul>
+  		</div>
+  	</div>
+
+	</div>
+       <% include partials/footer.ejs%>
+       <% include partials/script.ejs%>
+
+  </body>
+</html>

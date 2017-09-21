@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Because the movie varible reprasent the array of movie objects we use for loop to loop through the array os movies and get eachmovie poster and out put it.we have a class hear as we call image responsive this is a bootstrap class -->
+  <% include partials/head.ejs%>  
+  </head>
+  <body>
+<!--we have to create a div wit an id of hero image this is going to get a lot of those styles and custom  and we create a h1 and passing hero title it is going to become a little bit more useful for each movie has diff title-->
+<% include partials/header.ejs %>
+<div id="hero-image-notFound">
+<h1 id="hero-title"><%= title %></h1>
+</div>
+
+       <% include partials/footer.ejs%>
+       <% include partials/script.ejs%>
+
+  </body>
+</html>
